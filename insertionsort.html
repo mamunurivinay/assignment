@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>insertionsort</title>
+</head>
+
+<body>
+    <script>
+        var insertionsort = function (array, index) {
+            for (var i = index; i < array.length; i++) {
+                for (var j = index - 1; j < i; j++) {
+                    if (array[i] < array[j]) {
+                        var temp = array.splice(i, 1);
+                        array.splice(j, 0, temp[0]);
+                    }
+                }
+
+            }
+            if (--index > 0) {
+                insertionsort(array, index)
+            }
+            return array;
+        }
+        document.write(insertionsort([22, 11, 5, 33, 100, 250, 120, 99, 77], 2));
+    </script>
+</body>
+
+</html>
